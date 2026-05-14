@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 import type { ApiResult } from '../types/room'
 
 const http = axios.create({
@@ -18,14 +19,24 @@ http.interceptors.request.use((config) => {
 })
 
 http.interceptors.response.use(
-  (response) => response.data,
+  (response) => {
+    const res = response.data as ApiResult<any>
+    if (res.code !== 0 && res.code !== 200) {
+      const msg = res.message || '操作失败'
+      ElMessage.error(msg)
+      return Promise.reject(new Error(msg))
+    }
+    return res as any
+  },
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
       window.location.href = '/login'
+      return Promise.reject(new Error('登录已过期'))
     }
     const message = error.response?.data?.message || '网络请求失败'
+    ElMessage.error(message)
     return Promise.reject(new Error(message))
   }
 )
