@@ -1,11 +1,13 @@
-export enum RoomStatus {
-  CLEAN = 'CLEAN',
-  RESERVED = 'RESERVED',
-  BOOKED = 'BOOKED',
-  OCCUPIED = 'OCCUPIED',
-  DIRTY = 'DIRTY',
-  OUT_OF_SERVICE = 'OUT_OF_SERVICE',
-}
+export const RoomStatus = {
+  CLEAN: 'CLEAN',
+  RESERVED: 'RESERVED',
+  BOOKED: 'BOOKED',
+  OCCUPIED: 'OCCUPIED',
+  DIRTY: 'DIRTY',
+  OUT_OF_SERVICE: 'OUT_OF_SERVICE',
+} as const
+
+export type RoomStatus = (typeof RoomStatus)[keyof typeof RoomStatus]
 
 export interface FloorVO {
   id: number
