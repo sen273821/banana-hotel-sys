@@ -47,4 +47,4 @@ UPDATE room_type SET price=799, description='温馨家庭房，宽敞舒适', im
 
 -- 管理员种子数据 (密码: admin123)
 INSERT INTO `user` (username, password, nickname, phone, role) VALUES
-('admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKt6Z5EH', '系统管理员', '13800000000', 2);
+('admin', '$2a$10$Ulb3kwypn1LuC03g6NVL2O1bSnZjM2uZbLiN/FeI5PhYEx8sGHUQq', '系统管理员', '13800000000', 2);
