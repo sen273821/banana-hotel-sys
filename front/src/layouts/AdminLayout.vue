@@ -59,10 +59,9 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const menuItems = [
-  { path: '/room-status', label: '房态看板', icon: 'grid_view' },
-  { path: '/orders', label: '订单管理', icon: 'receipt_long' },
-  { path: '/checkin', label: '入住办理', icon: 'how_to_reg' },
-  { path: '/settings', label: '系统设置', icon: 'settings' },
+  { path: '/admin/room-status', label: '房态看板', icon: 'grid_view' },
+  { path: '/admin/orders', label: '订单管理', icon: 'receipt_long' },
+  { path: '/admin/checkin', label: '入住办理', icon: 'how_to_reg' },
 ]
 
 const currentTitle = computed(() => {

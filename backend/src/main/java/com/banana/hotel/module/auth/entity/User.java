@@ -1,4 +1,4 @@
-package com.banana.hotel.module.room.entity;
+package com.banana.hotel.module.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,18 +8,16 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("room_type")
-public class RoomType {
+@TableName("user")
+public class User {
 
     @TableId(type = IdType.AUTO)
     private Long id;
-    private String name;
-    private String code;
-    private String icon;
-    private Integer maxGuests;
-    private java.math.BigDecimal price;
-    private String description;
-    private String imageUrl;
+    private String username;
+    private String password;
+    private String nickname;
+    private String phone;
+    private Integer role;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
