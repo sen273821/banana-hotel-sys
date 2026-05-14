@@ -117,7 +117,7 @@ async function loadOrders() {
 async function loadAvailableRooms() {
   try {
     const res = await http.get<any>('/api/v1/rooms/board')
-    const allRooms = res.data.floors?.flatMap((f: any) => f.rooms) || []
+    const allRooms = res.data.rooms || []
     availableRooms.value = allRooms.filter((r: any) => r.status === 'CLEAN')
   } catch (e) {
     console.error(e)
