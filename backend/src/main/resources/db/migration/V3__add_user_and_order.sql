@@ -40,10 +40,10 @@ ALTER TABLE room_type ADD COLUMN description VARCHAR(500) DEFAULT '' COMMENT '�
 ALTER TABLE room_type ADD COLUMN image_url VARCHAR(255) DEFAULT '' COMMENT '房型图片';
 
 -- 更新房型价格种子数据
-UPDATE room_type SET price=299, description='舒适大床，适合商务出行', image_url='/images/standard-king.jpg' WHERE code='STANDARD_KING';
-UPDATE room_type SET price=329, description='温馨双床，适合朋友同行', image_url='/images/standard-twin.jpg' WHERE code='STANDARD_TWIN';
 UPDATE room_type SET price=499, description='豪华大床，尊享品质空间', image_url='/images/deluxe-king.jpg' WHERE code='DELUXE_KING';
-UPDATE room_type SET price=699, description='行政套房，独立客厅办公区', image_url='/images/suite.jpg' WHERE code='SUITE';
+UPDATE room_type SET price=329, description='温馨双床，适合朋友同行', image_url='/images/standard-twin.jpg' WHERE code='STANDARD_TWIN';
+UPDATE room_type SET price=599, description='商务套房，独立办公区域', image_url='/images/business-suite.jpg' WHERE code='BUSINESS_SUITE';
+UPDATE room_type SET price=799, description='温馨家庭房，宽敞舒适', image_url='/images/family-room.jpg' WHERE code='FAMILY_ROOM';
 
 -- 管理员种子数据 (密码: admin123)
 INSERT INTO `user` (username, password, nickname, phone, role) VALUES
