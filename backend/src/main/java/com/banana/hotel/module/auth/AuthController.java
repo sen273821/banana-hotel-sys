@@ -31,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public Result<UserVO> register(@Validated @RequestBody RegisterRequest request) {
+    public Result<Map<String, Object>> register(@Validated @RequestBody RegisterRequest request) {
         User existing = userMapper.selectOne(
                 new LambdaQueryWrapper<User>().eq(User::getUsername, request.getUsername()));
         if (existing != null) {
@@ -46,7 +46,11 @@ public class AuthController {
         user.setRole(0);
         userMapper.insert(user);
 
-        return Result.success(toVO(user));
+        String token = jwtUtils.generateToken(user.getId(), user.getUsername(), user.getRole());
+        Map<String, Object> data = new HashMap<>();
+        data.put("token", token);
+        data.put("user", toVO(user));
+        return Result.success(data);
     }
 
     @PostMapping("/login")
