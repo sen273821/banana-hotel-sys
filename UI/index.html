@@ -1,0 +1,400 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#c6c6cd",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "primary": "#000000",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#261900",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-container": "#98805d",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#45464d",
+                      "surface": "#f8f9ff",
+                      "error": "#ba1a1a",
+                      "tertiary": "#000000",
+                      "surface-container-high": "#dce9ff",
+                      "surface-container": "#e5eeff",
+                      "secondary-fixed": "#ffdea5",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#131b2e",
+                      "on-primary-container": "#7c839b",
+                      "surface-variant": "#d3e4fe",
+                      "inverse-on-surface": "#eaf1ff",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-secondary-container": "#785a1a",
+                      "primary-container": "#131b2e",
+                      "surface-dim": "#cbdbf5",
+                      "secondary-fixed-dim": "#e9c176",
+                      "on-background": "#0b1c30",
+                      "tertiary-container": "#271901",
+                      "primary-fixed": "#dae2fd",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#76777d",
+                      "on-tertiary-fixed": "#271901",
+                      "secondary": "#775a19",
+                      "secondary-container": "#fed488",
+                      "inverse-surface": "#213145",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#565e74",
+                      "surface-container-low": "#eff4ff",
+                      "inverse-primary": "#bec6e0",
+                      "error-container": "#ffdad6",
+                      "background": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "container-max": "1440px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <style data-stitch-cursor="">*{cursor:crosshair!important}[contenteditable="true"]:focus,.cursor-text:focus{cursor:text!important}</style><style data-stitch-scroll-lock="">html,body{overflow:hidden!important}</style></head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-lg md:px-xl h-16 bg-surface border-b border-outline-variant">
+    <div class="flex items-center gap-xl">
+        <span class="font-headline-lg text-headline-lg font-bold text-primary">香蕉酒店</span>
+        <nav class="hidden md:flex gap-lg">
+            <a class="text-primary font-bold border-b-2 border-primary py-1 px-1 transition-colors" href="#">探索</a>
+            <a class="text-on-surface-variant hover:bg-surface-container-low transition-colors py-1 px-2 rounded" href="#">我的预订</a>
+            <a class="text-on-surface-variant hover:bg-surface-container-low transition-colors py-1 px-2 rounded" href="#">客户支持</a>
+            <a class="text-on-surface-variant hover:bg-surface-container-low transition-colors py-1 px-2 rounded" href="#">会员中心</a>
+        </nav>
+    </div>
+    <div class="flex items-center gap-md">
+        <button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low rounded-full">notifications</button>
+        <button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low rounded-full">account_circle</button>
+    </div>
+</header>
+<main>
+    <!-- Hero Section -->
+    <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" data-alt="A sprawling, high-end luxury hotel lobby with soaring ceilings and massive floor-to-ceiling windows overlooking a shimmering metropolitan cityscape at twilight. The interior features polished marble floors reflecting soft, warm ambient lighting and elegant gold accents. The atmosphere is quiet, sophisticated, and exclusive, rendered in a crisp corporate modern style with a palette of deep navy and golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoTZOHbK5NLxxyeVZEm2RSzhXef-DwfJpLWBGS03qT1CuKSn9dB0hg8_C5Er1Boz5Y5fbRyL2oOGoAXzexjtfAclQ0oVUKK7LUWRiDWp7usaPMWMYvzktz3fIF33q7FTrbVPDqUwIpx9XgMPViBck4o-5frgzdY045EaEc8F4wVNqDu9S_NewDgshJmfEdvP60onc5ByUGeFDPH9UPSMf4d7kk0wAREJONf3IG9KN6AFBXh-ELuaz4z1VRXIgWc1xENUIefGY8B0o">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-5xl px-md">
+            <h1 class="text-white font-display-lg text-display-lg text-center mb-xl drop-shadow-lg">寻找您的下一场非凡下榻</h1>
+            <!-- Search Widget -->
+            <div class="bg-surface p-lg rounded-xl shadow-2xl flex flex-col md:flex-row gap-md items-end">
+                <div class="flex-1 w-full">
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-xs">目的地</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+                        <input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:border-primary focus:ring-0" placeholder="您想去哪里？" type="text">
+                    </div>
+                </div>
+                <div class="flex-1 w-full">
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-xs">入住 - 退房</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
+                        <input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:border-primary focus:ring-0" placeholder="选择日期" type="text">
+                    </div>
+                </div>
+                <div class="w-full md:w-48">
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-xs">入住人数</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">group</span>
+                        <input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:border-primary focus:ring-0" placeholder="2位成人, 0名儿童" type="text">
+                    </div>
+                </div>
+                <button class="bg-primary text-on-primary font-label-md text-label-md px-xl py-3.5 rounded-lg hover:opacity-90 transition-opacity w-full md:w-auto">
+                    搜索
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Popular Destinations -->
+    <section class="max-w-container-max mx-auto px-xl py-xl">
+        <h2 class="font-headline-md text-headline-md mb-lg">热门目的地</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-lg">
+            <!-- Destination Item -->
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="A vibrant street view of Shanghai's Bund area with iconic skyscrapers and the Pearl Tower in the background. The scene is captured during the blue hour with glowing city lights reflected on the water. The aesthetic is clean and modern, highlighting the dynamic energy of the Chinese metropolis through a palette of soft blues and bright city golds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBbf_IbN03lwxhp3__r3rb8AnCsJWDRUq0hN4Fd8N64SkoHIqz7zsU-TovjITd9F_WdBf7ec6aer3fOA-bq6TstnIcGB6XVnvXySg-CDdzCnqQBBHymNIB0KmnsWx1c1WubcAxcnNuUdAGMogAbNjUF2SWj0M-Zd-w7aRNxREfRDXdr4lKg2EL0k9HNNWQbnk41e5GSNN2Wig3A2cgXX0U7REK0JdvqXNO_Z7yzhHINeDfKKzTIynp7ipeu206t-c2MPvRQiiWjMw">
+                </div>
+                <span class="font-label-md text-label-md font-bold">上海</span>
+            </div>
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="A cinematic view of Tokyo's Shibuya Crossing at night, filled with neon signs and glowing advertisements. The image uses a cool-toned color palette with sharp contrasts and high detail, evoking a sense of fast-paced luxury and technological advancement in a modern Japanese setting. The lighting is crisp and multi-colored, reflecting the urban energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAryW466-prTIABBJNlna-dfVnp7_hjPKeb4gtSpeXMXs8ragZ1hHN2FJ9JkSqhuXs3qZTzr5-xChpF1k5fAXab3_CF_wCzPcqI7D5Cpo5caIB_60O9UIrLBg0tc4Ro797UpaSr4cBQkKfE-j4dNjs3ykctk05QHEXGUt5gl_3qaiww07iJVnwXS_pI-s1LnfFEzxf6ymJBg4lZ6mOKDxfRS84DRpN7TnJEKeFc6Sh3gjXzsRoWjiWdP_iz3xLGR8rqc2lBpMB4ke4">
+                </div>
+                <span class="font-label-md text-label-md font-bold">东京</span>
+            </div>
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="A peaceful London cityscape featuring Big Ben and the Houses of Parliament under a soft, golden sunrise. The Thames River in the foreground is calm, reflecting the historic architecture. The lighting is high-key and serene, maintaining a luxury hospitality feel with soft textures and a sophisticated, timeless British aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF2UDthIsEtSfkmpPP5A3mJgw7fR4nd_d_8fSX_MbE455yi7s1cR0lX524AaAqDKsWDtLV3qm_IbGgfC9Z_PIVYGlzDd6m86Nc24vWTO0_fiZ42z75QpUE16xZIBcYSXzpN5UATi-7seow1BxqxHdOuG3OjuOzzInNzIsvloRNArfhpnRDQkLtfGGvBZr4cHVdxxWksEoJ32xbVHXlNZn1-QXb5ilw4XUAts22yiRt39NdfkgV7EUFBhJCi_JasSJ8KXWl3t94Vjk">
+                </div>
+                <span class="font-label-md text-label-md font-bold">伦敦</span>
+            </div>
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="The Eiffel Tower standing elegantly against a soft pastel Parisian sunset sky. The surrounding gardens are manicured and lush, bathed in a romantic, warm glow. The overall visual style is airy and luxurious, utilizing a palette of cream, soft pink, and deep architectural iron tones to represent the quintessential luxury stay in Paris." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQZ_Q0K-_0D3OLScNBkmgL8BaiH_aUdg4hSGGeRE8VnZSnB6aCEX4_mnZUkUJgbLjCz5_fVP8IGhjB-teDYwl3gsB7cl9uzJN_vPvHJc1dnYq2G5u6wNxRfeet1N1Eb3lBHG0sl4r9MEnPtYcAoO1NSPizEBiN2EiI1Y7k82hEF6MHlZKaQ3kezhcN1-2GGr8l75d4w5bdGwGDgmm9HWCzHOW68eCWNmMMimxwU3f_zZrBYsQQiWMv0dCl3PAfGu8HrfedjlKZsc0">
+                </div>
+                <span class="font-label-md text-label-md font-bold">巴黎</span>
+            </div>
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="The bright lights of Times Square in New York City with yellow taxis and massive digital billboards. The scene is full of energy and urban motion, captured with a professional wide-angle lens. The color scheme is dominated by vibrant yellows and deep urban grays, representing the premier fast-paced hospitality of a major global financial center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvq0BacM6Z1MZ7k8lGdu7FyOvRMrhdKNrTWn6nT4-TSm-Q9uvtIL6ldLBtFXZZDnSpFhPFebHkYuIlvouHE49PefBuvWYlo4a33chAuqpIx_yCrUd3RqYL4GfID9FzG1ZQOXYICgmntWjVTK_Nuc7EmLokpzXPHHyBKje01mO9xzoCp4Ng42BZ8OrF3fbk6N8btpD3EktlAjyJCTQba-6rxHyuPaEQL2BYpNTF05a48p5YOczmzDPGzCh0sCkmnXNVNbPw4sL8cxk">
+                </div>
+                <span class="font-label-md text-label-md font-bold">纽约</span>
+            </div>
+            <div class="flex flex-col items-center gap-sm group cursor-pointer">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all">
+                    <img class="w-full h-full object-cover" data-alt="A serene view of the Burj Khalifa and the Dubai skyline at night, with illuminated fountains in the foreground. The lighting is opulent, featuring bright whites and deep blues, creating a high-end luxury feel. The composition emphasizes the verticality and architectural precision of this premier destination, rendered in a sharp, modern photographic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8H2XcJK9AugM67AuGu3_J0fTynY-Q3MaVZk__p9hJ6hMzohGz_1fSpCK_HurvMAvkBici46awirjmxyK9XB5el71YJisPN3M1Xb2EMoYq34c8DMHStB-r9yte9BpSDqRzGzb8uASKVHnVL0lwAVXyiy2z23aX_Bp4nJmxFamHFETsxAzDYR5UPi_C9soLD4VrFQ7cSj4HMuGp3pfCFpEKVhr8x_Q18w3DiCCBS0Nv4MBujoYFRhmxeqxuhCXzpsDIAZ_yk9xyhzk">
+                </div>
+                <span class="font-label-md text-label-md font-bold">迪拜</span>
+            </div>
+        </div>
+    </section>
+    <!-- Promotions Banner -->
+    <section class="max-w-container-max mx-auto px-xl mb-xl">
+        <div class="relative bg-primary-container rounded-xl overflow-hidden p-xl flex flex-col md:flex-row items-center gap-xl">
+            <div class="flex-1 text-on-primary">
+                <span class="inline-block bg-secondary text-on-secondary px-md py-1 rounded-full font-label-md text-label-md mb-md">早鸟优惠</span>
+                <h2 class="font-headline-lg text-headline-lg mb-sm">提前预订，畅享 20% 折扣</h2>
+                <p class="font-body-md text-body-md opacity-80 max-w-lg">提前 30 天预订您的下一次奢华之旅，即可在参与活动的酒店享受专属折扣。即刻规划，尽享优雅。</p>
+                <button class="mt-lg bg-secondary text-on-secondary px-xl py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
+                    立即探索
+                </button>
+            </div>
+            <div class="flex-1 w-full h-48 md:h-64 rounded-lg overflow-hidden">
+                <img class="w-full h-full object-cover" data-alt="A close-up shot of a private luxury swimming pool overlooking a serene Mediterranean ocean at sunrise. The water is a perfect crystal turquoise, and the poolside features elegant white lounge chairs and minimalist architectural lines. The scene is illuminated by soft, natural morning light, creating a sense of peace and exclusive relaxation in a high-end resort setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACLW2TusLFs8IuHC8qhgmVuvtcQz7acl07HBMqD8Cxk-J8NPPemRrKroXDvDlR_mfivUZnjwPBEDXok1i2Vg7xVwCTMvNNg8rOBLG6U5u5jcFsXGI--wGRWr8eUB5tzfelE5hJ2kCWehu6MDwRok8M_C1Ga6C15CAxGEja5czTSTzlyJcxT58g72Ft_Z-4ASiEmWez3WpVsTHgPPqms54mfNY3jOA8iTRtqwPZIh5c5Q8NFdOnVJI_qz-fohOQ1Y05kDOqMBkOsXU">
+            </div>
+        </div>
+    </section>
+    <!-- Featured Hotels Section -->
+    <section class="max-w-container-max mx-auto px-xl pb-xl">
+        <div class="flex justify-between items-end mb-lg">
+            <div>
+                <h2 class="font-headline-md text-headline-md">精选推荐酒店</h2>
+                <p class="text-on-surface-variant font-body-md">为您量身打造的顶级下榻之选</p>
+            </div>
+            <button class="text-secondary font-bold hover:underline">查看全部</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <!-- Hotel Card 1 -->
+            <div class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow group">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A majestic exterior view of a heritage luxury hotel in New York City. The architecture is ornate with classical stonework and polished brass entrance doors. Staff in formal attire are visible at the entrance, and the scene is lit by warm street lamps and soft building illumination under a clear evening sky. The style is grand, traditional, and impeccably refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApBr4Pd8CEiBM74Wdq7wtv4HZUlge_L9wOmU-YpQBdqA9EjISR-C-LZHOGHwRU0srvn8AfuwKS2BTiLLbeYquyikDkdpDsiel5fvnkd0x-rHjcX6lEdeFGVoBbe_yHw-ZVwKv2GttimF0d-1b7FoIOYYPZ8XxFo-Lmq5ifVSr6SHy_1ACidUpDH2kFNU5GqbjBsMG51jqv9a1dCJsiyi-PjE10PH9_3fKZTuyOHYnUvIllWq4yxegHXQ04-zkbgKjv34lScnbFcx0">
+                    <div class="absolute top-4 right-4 bg-white/90 px-sm py-1 rounded-full flex items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                        <span class="font-label-md text-label-md font-bold">4.9</span>
+                    </div>
+                </div>
+                <div class="p-lg">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-xs">纽约广场大酒店</h3>
+                            <div class="flex items-center text-on-surface-variant gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span class="text-label-md">纽约, 第五大道</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-md my-md">
+                        <span class="material-symbols-outlined text-outline" title="游泳池">pool</span>
+                        <span class="material-symbols-outlined text-outline" title="健身房">fitness_center</span>
+                        <span class="material-symbols-outlined text-outline" title="水疗中心">spa</span>
+                        <span class="material-symbols-outlined text-outline" title="无线网络">wifi</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-lg pt-md border-t border-outline-variant">
+                        <div>
+                            <span class="text-label-md text-on-surface-variant">每晚起价</span>
+                            <div class="font-headline-md text-primary">¥3,580</div>
+                        </div>
+                        <button class="bg-secondary text-on-secondary px-lg py-2 rounded-lg font-bold">预订</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Hotel Card 2 -->
+            <div class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow group">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern tropical luxury villa in Bali with an open-plan design and thatched roofing. The room opens directly onto a private infinity pool surrounded by lush, vibrant jungle greenery. The interior features natural wood textures, stone floors, and high-end contemporary furniture. The lighting is soft and diffused, creating a serene, immersive sanctuary vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlnYXw3VD-Rgr2JbsyMQyig0_BHFp77OV-tKdTKspbO1i-2T0UZ2Dbwbb6R0Qomyk0wBHjZUQZhXwazqGLTig5hMZGxmghQp2Ba6aU7GlIlewoO5mMHXENMfMMldzdsZw05iZ3kNhCu4K4R0MrYoze1_tvLneKJlSwpUYJnc-4lW6LPB-oAR0rDWA-ldgMT7M2-3fghADv6Eef-9G5Q6pRowoM15g3djR8avRZi_pOISR9VVn6CATw20xlChZ--PuztqCIibzBWxU">
+                    <div class="absolute top-4 right-4 bg-white/90 px-sm py-1 rounded-full flex items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                        <span class="font-label-md text-label-md font-bold">4.8</span>
+                    </div>
+                </div>
+                <div class="p-lg">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-xs">阿丽拉乌鲁瓦图别墅</h3>
+                            <div class="flex items-center text-on-surface-variant gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span class="text-label-md">巴厘岛, 乌鲁瓦图</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-md my-md">
+                        <span class="material-symbols-outlined text-outline" title="私人泳池">pool</span>
+                        <span class="material-symbols-outlined text-outline" title="瑜伽中心">self_improvement</span>
+                        <span class="material-symbols-outlined text-outline" title="餐厅">restaurant</span>
+                        <span class="material-symbols-outlined text-outline" title="礼宾服务">concierge</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-lg pt-md border-t border-outline-variant">
+                        <div>
+                            <span class="text-label-md text-on-surface-variant">每晚起价</span>
+                            <div class="font-headline-md text-primary">¥4,200</div>
+                        </div>
+                        <button class="bg-secondary text-on-secondary px-lg py-2 rounded-lg font-bold">预订</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Hotel Card 3 -->
+            <div class="bg-surface rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow group">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, minimalist luxury hotel suite in Tokyo featuring floor-to-ceiling windows with a panoramic view of the city skyline including the Tokyo Tower. The room is decorated in neutral tones with rich charcoal and soft ivory accents. Contemporary art hangs on the walls, and a designer desk sits by the window. The aesthetic is clean, professional, and ultra-modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRBeyaedTi8TE7cbNsereFAkHj-GesIsoGZoEQ60J0TyQmYt2M1hLxsm7vjeSy2JwWmoL5B7Q-IJzCcQoKdG4OoNb-Og-6EnH2W7ueSGuSMXaETG7GRZ783kuYSUXrbVOxzQt5awlTF32E7YWFECkufmMKUQbd3_KC3Hq09jvaTRS501k5u0nSjVEhTo8iVsClgdtoSyMAbfZRTKr1Y9OJAwuI3_XUcEPmg_yqqcY1k6uSVgZrQvuGzhRNZ-6G7vY017CbLqjFiwo">
+                    <div class="absolute top-4 right-4 bg-white/90 px-sm py-1 rounded-full flex items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                        <span class="font-label-md text-label-md font-bold">5.0</span>
+                    </div>
+                </div>
+                <div class="p-lg">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-xs">阿曼东京酒店</h3>
+                            <div class="flex items-center text-on-surface-variant gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span class="text-label-md">东京, 大手町</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-md my-md">
+                        <span class="material-symbols-outlined text-outline" title="空中泳池">pool</span>
+                        <span class="material-symbols-outlined text-outline" title="会议室">business_center</span>
+                        <span class="material-symbols-outlined text-outline" title="图书馆">book</span>
+                        <span class="material-symbols-outlined text-outline" title="调酒室">local_bar</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-lg pt-md border-t border-outline-variant">
+                        <div>
+                            <span class="text-label-md text-on-surface-variant">每晚起价</span>
+                            <div class="font-headline-md text-primary">¥6,800</div>
+                        </div>
+                        <button class="bg-secondary text-on-secondary px-lg py-2 rounded-lg font-bold">预订</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary py-xl">
+    <div class="max-w-container-max mx-auto px-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
+        <div>
+            <span class="font-headline-lg text-headline-lg font-bold text-white mb-md block">LuxeStay</span>
+            <p class="font-body-md opacity-60">定义全球奢华住宿的新标准。我们为追求卓越的旅行者提供无与伦比的管家式预订体验。</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-md">关于我们</h4>
+            <ul class="space-y-sm opacity-60 font-body-md">
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">品牌故事</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">联系我们</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">加入我们</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">新闻中心</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-md">合作伙伴</h4>
+            <ul class="space-y-sm opacity-60 font-body-md">
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">酒店加盟</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">分销商入口</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">企业预订</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">开发者 API</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-md">法律与隐私</h4>
+            <ul class="space-y-sm opacity-60 font-body-md">
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">隐私政策</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">使用条款</a></li>
+                <li class=""><a class="hover:text-secondary transition-colors" href="#">Cookie 声明</a></li>
+            </ul>
+            <div class="flex gap-md mt-lg">
+                <span class="material-symbols-outlined cursor-pointer hover:text-secondary">public</span>
+                <span class="material-symbols-outlined cursor-pointer hover:text-secondary">share</span>
+                <span class="material-symbols-outlined cursor-pointer hover:text-secondary">verified_user</span>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-xl mt-xl pt-lg border-t border-white/10 text-center opacity-40 font-label-md text-label-md">
+        © 2024 LuxeStay Manager. 保留所有权利。
+    </div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-md pb-sm pt-xs bg-surface shadow-[0_-4px_12px_rgba(15,23,42,0.08)] rounded-t-xl">
+    <div class="flex flex-col items-center justify-center text-secondary font-bold">
+        <span class="material-symbols-outlined">search</span>
+        <span class="font-label-md text-label-md">探索</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined">hotel</span>
+        <span class="font-label-md text-label-md">预订</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+        <span class="font-label-md text-label-md">入住</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-label-md text-label-md">我的</span>
+    </div>
+</nav>
+
+
+</body></html>
