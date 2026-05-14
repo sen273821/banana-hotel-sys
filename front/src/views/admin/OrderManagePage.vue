@@ -174,7 +174,7 @@ function statusClass(status: number) {
 
 async function loadOrders() {
   try {
-    const params: Record<string, any> = { page: page.value, pageSize: pageSize.value }
+    const params: Record<string, any> = { page: page.value, size: pageSize.value }
     if (filters.status !== '') params.status = filters.status
     if (filters.keyword) params.keyword = filters.keyword
     const res = await http.get<any>('/api/v1/admin/orders', { params })
