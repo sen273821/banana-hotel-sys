@@ -116,13 +116,16 @@
         <p class="text-sm text-gray-500 mb-2">订单号：{{ checkinOrder.orderNo }}</p>
         <p class="text-sm text-gray-500 mb-4">入住人：{{ checkinOrder.guestName }}</p>
         <div class="mb-4">
-          <label class="block text-sm text-gray-600 mb-1">分配房间号</label>
-          <input
+          <label class="block text-sm text-gray-600 mb-1">分配房间</label>
+          <select
             v-model="checkinRoomId"
-            type="number"
-            placeholder="输入房间ID"
             class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
-          />
+          >
+            <option value="">请选择房间</option>
+            <option v-for="room in availableRooms" :key="room.id" :value="room.id">
+              {{ room.roomNumber }} - {{ room.roomTypeName }}
+            </option>
+          </select>
         </div>
         <div class="flex gap-3">
           <button
@@ -153,6 +156,7 @@ const page = ref(1)
 const pageSize = ref(20)
 const checkinOrder = ref<any>(null)
 const checkinRoomId = ref('')
+const availableRooms = ref<any[]>([])
 
 const filters = reactive({ status: '', keyword: '' })
 
@@ -185,9 +189,20 @@ async function loadOrders() {
   }
 }
 
+async function loadAvailableRooms() {
+  try {
+    const res = await http.get<any>('/api/v1/rooms/board')
+    const allRooms = res.data.rooms || []
+    availableRooms.value = allRooms.filter((r: any) => r.status === 'CLEAN')
+  } catch (e) {
+    console.error(e)
+  }
+}
+
 function handleCheckin(order: any) {
   checkinOrder.value = order
   checkinRoomId.value = ''
+  loadAvailableRooms()
 }
 
 async function confirmCheckin() {
