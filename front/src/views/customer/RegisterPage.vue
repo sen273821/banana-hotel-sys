@@ -15,9 +15,11 @@
             <input
               v-model="form.username"
               type="text"
-              placeholder="请输入用户名"
+              placeholder="请输入用户名（3-50个字符）"
               class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
               required
+              minlength="3"
+              maxlength="50"
             />
           </div>
           <div class="mb-4">
@@ -93,6 +95,10 @@ const loading = ref(false)
 const error = ref('')
 
 async function handleRegister() {
+  if (form.username.length < 3 || form.username.length > 50) {
+    error.value = '用户名长度需在3-50个字符之间'
+    return
+  }
   if (form.password !== confirmPassword.value) {
     error.value = '两次密码输入不一致'
     return
