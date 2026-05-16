@@ -1,51 +1,60 @@
 <template>
-  <div class="flex h-screen bg-background">
-    <!-- Sidebar -->
-    <aside class="w-64 bg-primary-container flex flex-col">
-      <div class="p-lg">
-        <h1 class="text-white font-bold text-xl">香蕉酒店</h1>
-        <p class="text-white/60 text-sm mt-1">管理后台</p>
+  <div class="flex h-screen bg-[#f7f8fc] text-[#111827]">
+    <aside class="flex w-[280px] flex-col border-r border-[#d5dae4] bg-[#edf3ff]">
+      <div class="px-6 py-7">
+        <h1 class="flex items-center gap-3 text-2xl font-black">
+          <span class="material-symbols-outlined">apartment</span>
+          Grand Plaza
+        </h1>
+        <div class="mt-8 flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#111827] text-white">
+            <span class="material-symbols-outlined">account_circle</span>
+          </div>
+          <div>
+            <div class="text-sm font-black">Staff Portal</div>
+            <div class="text-xs text-[#5f6673]">Administrator</div>
+          </div>
+        </div>
       </div>
-      <nav class="flex-1 px-sm mt-md">
+      <nav class="flex-1 px-4">
         <router-link
           v-for="item in menuItems"
           :key="item.path"
           :to="item.path"
-          class="flex items-center gap-md px-md py-sm rounded-lg mb-xs transition-colors"
+          class="mb-2 flex items-center gap-4 rounded px-4 py-3 font-bold transition-colors"
           :class="[
             isActive(item.path)
-              ? 'bg-white/15 text-white'
-              : 'text-white/60 hover:bg-white/10 hover:text-white'
+              ? 'bg-[#dce9ff] text-black'
+              : 'text-[#293241] hover:bg-white/60'
           ]"
         >
-          <span class="material-symbols-outlined text-[20px]">{{ item.icon }}</span>
-          <span class="text-sm font-medium">{{ item.label }}</span>
+          <span class="material-symbols-outlined text-[22px]">{{ item.icon }}</span>
+          <span class="text-sm">{{ item.label }}</span>
         </router-link>
       </nav>
+      <div class="border-t border-[#cdd5e2] p-4">
+        <button class="mb-5 w-full rounded bg-[#ffd889] py-4 font-black text-[#5d4201]">所有楼层</button>
+        <div class="space-y-4 px-4 text-sm font-bold text-[#293241]">
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined">settings</span>设置</div>
+          <div class="flex items-center gap-3"><span class="material-symbols-outlined">help</span>客服支持</div>
+        </div>
+      </div>
     </aside>
 
-    <!-- Main Content -->
-    <div class="flex-1 flex flex-col overflow-hidden">
-      <!-- Header -->
-      <header class="h-16 bg-surface border-b border-outline-variant flex items-center justify-between px-xl">
-        <div class="flex items-center gap-md">
-          <h2 class="text-lg font-semibold text-on-surface">{{ currentTitle }}</h2>
-        </div>
-        <div class="flex items-center gap-md">
-          <button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full">
-            notifications
-          </button>
-          <div class="flex items-center gap-sm">
-            <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-              <span class="text-on-secondary text-xs font-bold">管</span>
-            </div>
-            <span class="text-sm text-on-surface">管理员</span>
-          </div>
+    <div class="flex flex-1 flex-col overflow-hidden">
+      <header class="flex h-16 items-center justify-between border-b border-[#d5dae4] bg-[#f7f8fc] px-8">
+        <h2 class="text-2xl font-black">香蕉酒店后台</h2>
+        <div class="flex items-center gap-5">
+          <label class="hidden h-11 w-[300px] items-center gap-3 rounded-lg border border-[#c8d1df] bg-[#eaf1ff] px-4 md:flex">
+            <span class="material-symbols-outlined text-[#5f6673]">search</span>
+            <input class="w-full border-0 bg-transparent text-sm font-bold outline-none" placeholder="搜索房间..." />
+          </label>
+          <button class="material-symbols-outlined relative">notifications</button>
+          <button class="material-symbols-outlined">account_circle</button>
         </div>
       </header>
 
-      <!-- Page Content -->
-      <main class="flex-1 overflow-auto p-xl bg-surface-container-low">
+      <main class="flex-1 overflow-auto bg-[#f7f8fc] p-8">
         <router-view />
       </main>
     </div>
@@ -53,21 +62,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
 const menuItems = [
-  { path: '/admin/room-status', label: '房态看板', icon: 'grid_view' },
+  { path: '/admin/room-status', label: '房态看板', icon: 'dashboard' },
   { path: '/admin/orders', label: '订单管理', icon: 'receipt_long' },
-  { path: '/admin/checkin', label: '入住办理', icon: 'how_to_reg' },
+  { path: '/admin/checkin', label: '员工管理', icon: 'groups' },
 ]
-
-const currentTitle = computed(() => {
-  const item = menuItems.find(m => route.path.startsWith(m.path))
-  return item?.label || '管理后台'
-})
 
 function isActive(path: string) {
   return route.path.startsWith(path)
